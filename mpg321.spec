@@ -5,7 +5,7 @@ Version:	0.2.10
 Release:	3
 Group:		Applications/Sound
 License:	GPL
-Source0:	http://prdownloads.sourceforge.net/mpg321/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/mpg321/%{name}-%{version}.tar.gz
 Patch0:		%{name}-tags.patch
 URL:		http://sourceforge.net/projects/%{name}/
 BuildRequires:	libao-devel
