@@ -1,19 +1,16 @@
 Summary:	A Free command-line mp3 player based on smpeg
 Summary(pl):	Odtwarzacz mp3 bazuj±cy na smpeg wywo³ywany z linii poleceñ
 Name:		mpg321
-Version:	0.0.2
+Version:	0.2.2
 Release:	1
 Group:		Applications/Sound
 Group(de):	Applikationen/Laut
 Group(pl):	Aplikacje/D¼wiêk
 License:	GPL
-Source0:	http://gemini.woot.net/~hosehead/packages/%{name}_%{version}.tar.gz
-Patch0:		%{name}-configure.patch
+Source0:	http://prdownloads.sourceforge.net/mpg321/%{name}-%{version}.tar.gz
 BuildRequires:	libao-devel
-BuildRequires:	smpeg-devel
-BuildRequires:	SDL-devel >= 1.1.5
-BuildRequires:	autoconf
-BuildRequires:	automake
+BuildRequires:	mad-devel
+Requires:	mad
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -32,13 +29,10 @@ doskona³ym zamiennikiem dla mpg123 w wielu prostych przypadkach.
 
 %prep
 %setup -q
-%patch -p1
 
 %build
-aclocal
-autoconf
-automake -a -c
-%configure
+%configure \
+	--disable-mpg123-symlink
 
 %{__make}
 
@@ -48,7 +42,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf AUTHORS CREDITS README PROBLEMS TODO
+gzip -9nf AUTHORS README README.remote THANKS NEWS TODO
 
 %clean
 rm -rf $RPM_BUILD_ROOT
