@@ -25,8 +25,8 @@ however.
 %description -l pl
 mpg321 to klon popularnego odtwarzacza mp3 mpg123. mpg321 powinien byæ
 doskona³ym zamiennikiem dla mpg123 w wielu prostych przypadkach.
-Jednak na razie jest abrdzo prosty, i wiele opcji z linii poleceñ
-mpg123 jest ignorowana. Nie nale¿y oczekiwaæ, ¿e ten program bêdzie
+Jednak na razie jest bardzo prosty, i wiele opcji z linii poleceñ
+mpg123 jest ignorowane. Nie nale¿y oczekiwaæ, ¿e ten program bêdzie
 bêdzie dzia³aæ w ka¿dej sytuacji! W szczególno¶ci, prawdopodobnie
 bêdzie dzia³aæ z frontendami (testowane z programem gqmpeg) oraz jako
 dekoder mp3 do wav. Na bardzo s³abych systemach prawdopodobnie nie
