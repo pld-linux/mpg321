@@ -21,7 +21,7 @@ should function as a drop-in replacement for mpg123 in many simple
 cases. However, it is currently very simple, and many of the
 command-line options of mpg123 are no-ops. Don't expect this program
 to work for everything! In particular, it will probably work with
-front-ends (tested with gqmpeg) and as a MP3-to-wav decoder. On
+front-ends (tested with gqmpeg) and as a MP3-to-WAV decoder. On
 lower-end systems it will probably not be as efficient as mpg123,
 however.
 
@@ -32,7 +32,7 @@ Jednak na razie jest bardzo prosty, i wiele opcji z linii poleceñ
 mpg123 jest ignorowane. Nie nale¿y oczekiwaæ, ¿e ten program bêdzie
 bêdzie dzia³aæ w ka¿dej sytuacji! W szczególno¶ci, prawdopodobnie
 bêdzie dzia³aæ z frontendami (testowane z programem gqmpeg) oraz jako
-dekoder MP3 do wav. Na bardzo s³abych systemach prawdopodobnie nie
+dekoder MP3 do WAV. Na bardzo s³abych systemach prawdopodobnie nie
 bêdzie tak wydajny jak mpg123.
 
 %package mpg123
