@@ -6,7 +6,7 @@ Release:	5
 Group:		Applications/Sound
 License:	GPL
 Source0:	http://dl.sourceforge.net/mpg321/%{name}-%{version}.tar.gz
-# Source0-md5: bb403b35c2d25655d55f0f616b8f47bb
+# Source0-md5:	bb403b35c2d25655d55f0f616b8f47bb
 Patch0:		%{name}-tags.patch
 Patch1:		%{name}-debian.patch
 URL:		http://sourceforge.net/projects/mpg321/
