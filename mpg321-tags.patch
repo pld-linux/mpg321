@@ -1,0 +1,11 @@
+--- mpg321-0.2.10/mpg321.c.orig	Sun Mar 24 06:49:20 2002
++++ mpg321-0.2.10/mpg321.c	Mon Aug 19 20:25:34 2002
+@@ -293,7 +293,7 @@
+         strncpy(playbuf.filename,currentfile, PATH_MAX);
+         playbuf.filename[PATH_MAX-1] = '\0';
+         
+-        if (status == MPG321_PLAYING) 
++        /* if (status == MPG321_PLAYING)   -- what for??? it prevents displaying tags and other info on next files */
+             file_change = 1;
+ 
+         mad_timer_reset(&playbuf.duration);

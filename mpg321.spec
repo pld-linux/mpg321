@@ -2,10 +2,11 @@ Summary:	A Free command-line mp3 player based on smpeg
 Summary(pl):	Odtwarzacz mp3 bazuj±cy na smpeg wywo³ywany z linii poleceñ
 Name:		mpg321
 Version:	0.2.10
-Release:	1
+Release:	2
 Group:		Applications/Sound
 License:	GPL
 Source0:	http://prdownloads.sourceforge.net/mpg321/%{name}-%{version}.tar.gz
+Patch0:		%{name}-tags.patch
 URL:		http://sourceforge.net/projects/%{name}/
 BuildRequires:	libao-devel
 BuildRequires:	mad-devel
@@ -24,9 +25,16 @@ however.
 %description -l pl
 mpg321 to klon popularnego odtwarzacza mp3 mpg123. mpg321 powinien byæ
 doskona³ym zamiennikiem dla mpg123 w wielu prostych przypadkach.
+Jednak na razie jest abrdzo prosty, i wiele opcji z linii poleceñ
+mpg123 jest ignorowana. Nie nale¿y oczekiwaæ, ¿e ten program bêdzie
+bêdzie dzia³aæ w ka¿dej sytuacji! W szczególno¶ci, prawdopodobnie
+bêdzie dzia³aæ z frontendami (testowane z programem gqmpeg) oraz jako
+dekoder mp3 do wav. Na bardzo s³abych systemach prawdopodobnie nie
+bêdzie tak wydajny jak mpg123.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 %configure \
@@ -38,14 +46,14 @@ doskona³ym zamiennikiem dla mpg123 w wielu prostych przypadkach.
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
 mv debian/changelog ChangeLog
-gzip -9nf AUTHORS README README.remote THANKS NEWS TODO ChangeLog BUGS
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS README README.remote THANKS NEWS TODO ChangeLog BUGS
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man*/*
