@@ -11,6 +11,7 @@ Patch0:		%{name}-tags.patch
 URL:		http://sourceforge.net/projects/mpg321/
 BuildRequires:	libao-devel
 BuildRequires:	libmad-devel > 0.14
+BuildRequires:	libid3tag-devel > 0.14
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
