@@ -2,17 +2,15 @@ Summary:	A Free command-line mp3 player based on smpeg
 Summary(pl):	Odtwarzacz mp3 bazuj±cy na smpeg wywo³ywany z linii poleceñ
 Name:		mpg321
 Version:	0.2.10
-Release:	3
+Release:	4
 Group:		Applications/Sound
 License:	GPL
 Source0:	http://dl.sourceforge.net/mpg321/%{name}-%{version}.tar.gz
 # Source0-md5: bb403b35c2d25655d55f0f616b8f47bb
 Patch0:		%{name}-tags.patch
-URL:		http://sourceforge.net/projects/%{name}/
+URL:		http://sourceforge.net/projects/mpg321/
 BuildRequires:	libao-devel
 BuildRequires:	mad-devel
-Provides:	mpg123
-Obsoletes:	mpg123
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,6 +33,20 @@ bêdzie dzia³aæ z frontendami (testowane z programem gqmpeg) oraz jako
 dekoder mp3 do wav. Na bardzo s³abych systemach prawdopodobnie nie
 bêdzie tak wydajny jak mpg123.
 
+%package mpg123
+Summary:	Package to use mpg321 as mpg123 replacement
+Summary(pl):	Pakiet pozwalaj±cy u¿ywaæ mpg321 jako zamiennika mpg123
+Group:		Applications/Sound
+Requires:	%{name} = %{version}
+Provides:	mpg123
+Obsoletes:	mpg123
+
+%description mpg123
+Package to use mpg321 as mpg123 replacement.
+
+%description mpg123 -l pl
+Pakiet pozwalaj±cy u¿ywaæ mpg321 jako zamiennika mpg123.
+
 %prep
 %setup -q
 %patch -p1
@@ -46,16 +58,22 @@ bêdzie tak wydajny jak mpg123.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv debian/changelog ChangeLog
+echo '.so mpg321.1' > $RPM_BUILD_ROOT%{_mandir}/man1/mpg123.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS README README.remote THANKS NEWS TODO ChangeLog BUGS
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man*/*
+%doc AUTHORS README README.remote THANKS NEWS TODO BUGS debian/changelog
+%attr(755,root,root) %{_bindir}/mpg321
+%{_mandir}/man*/mpg321.1*
+
+%files mpg123
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/mpg123
+%{_mandir}/man*/mpg123.1*
