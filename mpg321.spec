@@ -10,7 +10,7 @@ Source0:	http://dl.sourceforge.net/mpg321/%{name}-%{version}.tar.gz
 Patch0:		%{name}-tags.patch
 URL:		http://sourceforge.net/projects/mpg321/
 BuildRequires:	libao-devel
-BuildRequires:	mad-devel
+BuildRequires:	libmad-devel > 0.14
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
