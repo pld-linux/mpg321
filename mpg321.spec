@@ -8,9 +8,9 @@ Group(de):	Applikationen/Laut
 Group(pl):	Aplikacje/D¼wiêk
 License:	GPL
 Source0:	http://prdownloads.sourceforge.net/mpg321/%{name}-%{version}.tar.gz
+URL:		http://sourceforge.net/projects/%{name}/
 BuildRequires:	libao-devel
 BuildRequires:	mad-devel
-Requires:	mad
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -38,11 +38,10 @@ doskona³ym zamiennikiem dla mpg123 w wielu prostych przypadkach.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-gzip -9nf AUTHORS README README.remote THANKS NEWS TODO
+mv debian/changelog ChangeLog
+gzip -9nf AUTHORS README README.remote THANKS NEWS TODO ChangeLog BUGS
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -50,6 +49,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc *.gz
-
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man*/*
