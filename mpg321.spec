@@ -1,5 +1,5 @@
 Summary:	A Free command-line MP3 player based on smpeg
-Summary(pl):	Odtwarzacz MP3 bazuj±cy na smpeg wywo³ywany z linii poleceñ
+Summary(pl.UTF-8):   Odtwarzacz MP3 bazujÄ…cy na smpeg wywoÅ‚ywany z linii poleceÅ„
 Name:		mpg321
 Version:	0.2.10
 Release:	5
@@ -25,19 +25,19 @@ front-ends (tested with gqmpeg) and as a MP3-to-WAV decoder. On
 lower-end systems it will probably not be as efficient as mpg123,
 however.
 
-%description -l pl
-mpg321 to klon popularnego odtwarzacza MP3 mpg123. mpg321 powinien byæ
-doskona³ym zamiennikiem dla mpg123 w wielu prostych przypadkach.
-Jednak na razie jest bardzo prosty, i wiele opcji z linii poleceñ
-mpg123 jest ignorowane. Nie nale¿y oczekiwaæ, ¿e ten program bêdzie
-bêdzie dzia³aæ w ka¿dej sytuacji! W szczególno¶ci, prawdopodobnie
-bêdzie dzia³aæ z frontendami (testowane z programem gqmpeg) oraz jako
-dekoder MP3 do WAV. Na bardzo s³abych systemach prawdopodobnie nie
-bêdzie tak wydajny jak mpg123.
+%description -l pl.UTF-8
+mpg321 to klon popularnego odtwarzacza MP3 mpg123. mpg321 powinien byÄ‡
+doskonaÅ‚ym zamiennikiem dla mpg123 w wielu prostych przypadkach.
+Jednak na razie jest bardzo prosty, i wiele opcji z linii poleceÅ„
+mpg123 jest ignorowane. Nie naleÅ¼y oczekiwaÄ‡, Å¼e ten program bÄ™dzie
+bÄ™dzie dziaÅ‚aÄ‡ w kaÅ¼dej sytuacji! W szczegÃ³lnoÅ›ci, prawdopodobnie
+bÄ™dzie dziaÅ‚aÄ‡ z frontendami (testowane z programem gqmpeg) oraz jako
+dekoder MP3 do WAV. Na bardzo sÅ‚abych systemach prawdopodobnie nie
+bÄ™dzie tak wydajny jak mpg123.
 
 %package mpg123
 Summary:	Package to use mpg321 as mpg123 replacement
-Summary(pl):	Pakiet pozwalaj±cy u¿ywaæ mpg321 jako zamiennika mpg123
+Summary(pl.UTF-8):   Pakiet pozwalajÄ…cy uÅ¼ywaÄ‡ mpg321 jako zamiennika mpg123
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 Provides:	mpg123
@@ -46,8 +46,8 @@ Obsoletes:	mpg123
 %description mpg123
 Package to use mpg321 as mpg123 replacement.
 
-%description mpg123 -l pl
-Pakiet pozwalaj±cy u¿ywaæ mpg321 jako zamiennika mpg123.
+%description mpg123 -l pl.UTF-8
+Pakiet pozwalajÄ…cy uÅ¼ywaÄ‡ mpg321 jako zamiennika mpg123.
 
 %prep
 %setup -q
