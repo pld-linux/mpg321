@@ -1,5 +1,5 @@
 Summary:	A Free command-line MP3 player based on smpeg
-Summary(pl.UTF-8):   Odtwarzacz MP3 bazujący na smpeg wywoływany z linii poleceń
+Summary(pl.UTF-8):	Odtwarzacz MP3 bazujący na smpeg wywoływany z linii poleceń
 Name:		mpg321
 Version:	0.2.10
 Release:	5
@@ -37,7 +37,7 @@ będzie tak wydajny jak mpg123.
 
 %package mpg123
 Summary:	Package to use mpg321 as mpg123 replacement
-Summary(pl.UTF-8):   Pakiet pozwalający używać mpg321 jako zamiennika mpg123
+Summary(pl.UTF-8):	Pakiet pozwalający używać mpg321 jako zamiennika mpg123
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 Provides:	mpg123
