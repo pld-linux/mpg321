@@ -1,14 +1,13 @@
 Summary:	A Free command-line MP3 player based on smpeg
 Summary(pl.UTF-8):	Odtwarzacz MP3 bazujący na smpeg wywoływany z linii poleceń
 Name:		mpg321
-Version:	0.2.10
-Release:	6
+Version:	0.2.11
+Release:	1
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://dl.sourceforge.net/mpg321/%{name}-%{version}.tar.gz
-# Source0-md5:	bb403b35c2d25655d55f0f616b8f47bb
+# Source0-md5:	601a79ed8bbad00b14508092b854ca48
 Patch0:		%{name}-tags.patch
-Patch1:		%{name}-debian.patch
 URL:		http://sourceforge.net/projects/mpg321/
 BuildRequires:	libao-devel
 BuildRequires:	libid3tag-devel > 0.14
@@ -50,13 +49,11 @@ Package to use mpg321 as mpg123 replacement.
 Pakiet pozwalający używać mpg321 jako zamiennika mpg123.
 
 %prep
-%setup -q
+%setup -q -n %{name}
 %patch0 -p1
-%patch1 -p1
 
 %build
 %configure
-
 %{__make}
 
 %install
