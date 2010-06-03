@@ -2,7 +2,7 @@ Summary:	A Free command-line MP3 player based on smpeg
 Summary(pl.UTF-8):	Odtwarzacz MP3 bazujący na smpeg wywoływany z linii poleceń
 Name:		mpg321
 Version:	0.2.11
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://dl.sourceforge.net/mpg321/%{name}-%{version}.tar.gz
