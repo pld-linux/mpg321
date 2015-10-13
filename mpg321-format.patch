@@ -1,0 +1,38 @@
+--- mpg321-0.3.2-orig/mpg321.c.orig	2015-10-13 18:00:37.927746420 +0200
++++ mpg321-0.3.2-orig/mpg321.c	2015-10-13 18:06:39.041072228 +0200
+@@ -183,7 +183,7 @@
+ 				else{
+ #endif					
+ 					if(!(options.opt & MPG321_ENABLE_BUFFER))
+-						fprintf(stderr,"Volume: %ld%%      \r",volume);
++						fprintf(stderr,"Volume: %d%%      \r",volume);
+ #ifdef HAVE_ALSA
+ 				}
+ #endif
+@@ -233,7 +233,7 @@
+ 				else{
+ #endif
+ 					if(!(options.opt & MPG321_ENABLE_BUFFER))
+-						fprintf(stderr,"Volume: %ld%%      \r",volume);
++						fprintf(stderr,"Volume: %d%%      \r",volume);
+ #ifdef HAVE_ALSA
+ 				}
+ #endif
+@@ -447,7 +447,7 @@
+         {
+             if(!names[i])
+             {
+-                printf(emptystring);
++                fputs(emptystring, stdout);
+             }
+             
+             else
+@@ -465,7 +465,7 @@
+         for (i=0; i<=5; i++)    {
+             fprintf (stderr, "%s", info_id3[i].name);
+             if (!names[i])  {
+-                fprintf (stderr, emptystring);
++                fputs (emptystring, stderr);
+             }   else    {
+                 fprintf (stderr, "%s", names[i]);
+                 free (names[i]);

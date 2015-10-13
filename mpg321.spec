@@ -1,17 +1,20 @@
 Summary:	A Free command-line MP3 player based on smpeg
 Summary(pl.UTF-8):	Odtwarzacz MP3 bazujący na smpeg wywoływany z linii poleceń
 Name:		mpg321
-Version:	0.2.11
-Release:	2
+Version:	0.3.2
+Release:	1
 License:	GPL
 Group:		Applications/Sound
-Source0:	http://dl.sourceforge.net/mpg321/%{name}-%{version}.tar.gz
-# Source0-md5:	601a79ed8bbad00b14508092b854ca48
+Source0:	http://downloads.sourceforge.net/mpg321/%{name}_%{version}.orig.tar.gz
+# Source0-md5:	d3c343d2183e239e4df56a4aae2466a6
 Patch0:		%{name}-tags.patch
+Patch1:		%{name}-format.patch
 URL:		http://sourceforge.net/projects/mpg321/
+BuildRequires:	alsa-lib-devel
 BuildRequires:	libao-devel
-BuildRequires:	libid3tag-devel > 0.14
+BuildRequires:	libid3tag-devel >= 0.14.1
 BuildRequires:	libmad-devel > 0.14
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -49,11 +52,13 @@ Package to use mpg321 as mpg123 replacement.
 Pakiet pozwalający używać mpg321 jako zamiennika mpg123.
 
 %prep
-%setup -q -n %{name}
+%setup -q -n %{name}-%{version}-orig
 %patch0 -p1
+%patch1 -p1
 
 %build
-%configure
+%configure \
+	--enable-ipv6
 %{__make}
 
 %install
@@ -69,11 +74,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS README README.remote THANKS NEWS TODO BUGS debian/changelog
+%doc AUTHORS BUGS NEWS README README.remote THANKS TODO
 %attr(755,root,root) %{_bindir}/mpg321
-%{_mandir}/man*/mpg321.1*
+%{_mandir}/man1/mpg321.1*
 
 %files mpg123
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/mpg123
-%{_mandir}/man*/mpg123.1*
+%{_mandir}/man1/mpg123.1*
